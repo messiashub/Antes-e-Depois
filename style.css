@@ -1,0 +1,99 @@
+/* Resetando
+-------------------*/
+*{
+    margin: 0; padding: 0; box-shadow: inset 0px 0px 0px 1px rgba(255, 38, 0, 0.1);
+}
+html,body{
+    display: grid;
+    height: 85%;
+    place-items: center;
+    background-color: aquamarine;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+}
+
+h1{
+    color: rgb(70, 181, 233);
+}
+.wrapper{
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background: #fff;
+    border: 7px solid #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+}
+.wrapper .images{
+    width: 100%;
+    height: 100%;
+    background:rgba(70, 181, 233, 0.287);
+    display: flex;
+}
+.wrapper .images .img-1{
+    width: 100%;
+    height: 100%;
+    background: url(./assets/img1.png) no-repeat;
+}
+.wrapper .images .img-2{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: url(./assets/img2.png)
+}
+.wrapper .slider{
+    position: absolute;
+    /* background-color: red; */
+    width: 100%;
+    z-index: 99;
+    top: 0;
+}
+.wrapper .slider input{
+    width: 100%;
+    outline: none;   /* outline é uma linha que é desenhada em torno de elementos */
+    background:none;
+    appearance: none; /* remove o estilo  */
+}
+
+.slider input::-webkit-slider-thumb{/* :-webkit-slider-thumb para alterar o valor numerico do range*/
+    width: 3px;
+    height: 490px;
+    background:none;
+    appearance: none;
+    cursor: col-resize; /* muda a bolinha */
+    /* cursor: pointer; */
+    /* cursor: e-resize; */
+
+}
+.slider .drag-line{ /* linha vertical */
+    width: 3px;
+    height: 490px;
+    position: absolute;
+    left:49.7%;
+    pointer-events: none; /* A propriedade define se um elemento reage ou não a eventos de ponteiro */  
+}
+.slider .drag-line::before,
+.slider .drag-line::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 222px;
+    background: #fff;
+}
+.slider .drag-line::before{
+    top: 0;
+}
+.slider .drag-line::after{
+    bottom: 0;
+}
+
+.slider .drag-line span{
+    width: 42px;
+    height: 42px;
+    border: 3px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
