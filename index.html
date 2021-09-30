@@ -21,6 +21,20 @@
             <input type="range" min="0" max="100" value="50"> <!-- começa com o valor de 50 --> 
         </div>       
     </div>
+
+    <script>
+        const slider = document.querySelector('.slider input');
+        console.log(slider);
+        const img = document.querySelector('.images .img-2');
+        const dragline = document.querySelector('.slider .drag-line');
+        console.log(dragline);
+        slider.oninput = ()=>{
+            let sliderVal = slider.value;
+            dragline.style.left = sliderVal + '%';
+            img.style.width = sliderVal + '%';
+        }
+        
+    </script>
     
 </body>
 </html>

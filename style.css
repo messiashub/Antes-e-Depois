@@ -1,20 +1,22 @@
 /* Resetando
 -------------------*/
 *{
-    margin: 0; padding: 0; box-shadow: inset 0px 0px 0px 1px rgba(255, 38, 0, 0.1);
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    /* box-shadow: inset 0px 0px 0px 1px rgba(255, 38, 0, 0.1); */
 }
 html,body{
     display: grid;
     height: 85%;
     place-items: center;
-    background-color: aquamarine;
-    /* justify-content: center;
-    align-items: center;
-    flex-direction: column; */
+    background-color: #0D1117
+   
 }
 
 h1{
-    color: rgb(70, 181, 233);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(255, 127, 123);
 }
 .wrapper{
     position: relative;
@@ -96,4 +98,20 @@ h1{
     left: 50%;
     border-radius: 50%;
     transform: translate(-50%, -50%);
+}
+.slider .drag-line span::before,
+.slider .drag-line span::after{
+    position: absolute;
+    content: "";
+    top:50%;
+    border: 10px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    transform: translate(-50%, -50) rotate(45deg)
+}
+.slider .drag-line span::before{
+    left: 40%;
+}
+.slider .drag-line span::after{
+    left: 60%;
 }
